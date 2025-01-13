@@ -17,18 +17,23 @@ AI Summarizer is a Chrome extension that leverages AI to summarize webpage conte
 ## Installation
 
 1. Clone this repository:
- 
+   ```bash
    git clone https://github.com/khushisatija/AISummarizer.git
    cd AISummarizer
+   ```
    
 2. Install dependencies for the backend:
+   ```bash
    npm install
+   ```
 
 3. Start the backend server:
-   Add your API key and run "node server.js"
-   
+   Add your API key and run
+   ```bash
+   node server.js
+   ```
 
-5. Load the Chrome extension:
+4. Load the Chrome extension:
 
   Open Chrome and go to chrome://extensions/.
   Enable "Developer mode" (top right).
