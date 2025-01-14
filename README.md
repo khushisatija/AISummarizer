@@ -12,7 +12,7 @@ AI Summarizer is a Chrome extension that leverages AI to summarize webpage conte
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Node.js, Express.js
-- **AI Model**: OpenAI GPT
+- **AI Model**: Gemini AI Model
 
 ## Installation
 
