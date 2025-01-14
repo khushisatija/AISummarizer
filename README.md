@@ -45,3 +45,7 @@ AI Summarizer is a Chrome extension that leverages AI to summarize webpage conte
   Click on the AI Summarizer Chrome extension icon.
   Click the Summarize button to generate a summary.
   Optionally, click Copy to copy the summary to your clipboard.
+
+![Screenshot 2025-01-14 232124](https://github.com/user-attachments/assets/fdb90299-5cea-4772-8e43-e345be721b8f)
+![Screenshot 2025-01-14 232152](https://github.com/user-attachments/assets/0c6609ea-085c-4b31-83aa-293d53c3a705)
+
