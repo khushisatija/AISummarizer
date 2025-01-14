@@ -1,13 +1,11 @@
 import express from "express";
-import OpenAI from "openai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const app = express();
 const PORT = 3000;
 
-// Initialize OpenAI with your API key
-const openai = new OpenAI({
-  apiKey: "", // Replace with your actual OpenAI API key
-});
+// Initialize Google Generative AI with your API key
+const genAI = new GoogleGenerativeAI("");
 
 app.use(express.json());
 
@@ -22,24 +20,12 @@ app.post("/summarize", async (req, res) => {
 
     console.log("Content being summarized:", content);
 
-    // Use OpenAI SDK to generate the completion
-    const response = await openai.chat.completions.create({
-      model: "babbage-002",
-      messages: [
-        {
-          role: "system",
-          content: "You are a helpful assistant that summarizes content.",
-        },
-        {
-          role: "user",
-          content: `Summarize this: ${content}`,
-        },
-      ],
-      max_tokens: 150,
-    });
+    // Use Google Generative AI to generate the completion
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const result = await model.generateContent(content);
 
-    console.log("OpenAI API Response:", response);
-    res.json(response.choices[0].message.content.trim());
+    console.log("Google Generative AI Response:", result);
+    res.json({ summary: result.response.text() });
   } catch (error) {
     console.error("Error in /summarize endpoint:", error);
     res.status(500).send("Error summarizing content");
@@ -47,5 +33,3 @@ app.post("/summarize", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
- 
